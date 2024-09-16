@@ -1,0 +1,382 @@
+/* Fonts */
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins/Poppins-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf"); /* Weights : 400, 600, 700*/
+}
+
+/* Variables */
+:root {
+  --primary-clr: hsl(322, 100%, 66%);
+  --hover-primary-clr: hsl(321, 100%, 78%);
+  --invalid-input: hsl(0, 100%, 63%);
+  --footer-bg: hsl(192, 100%, 9%);
+  --wave-bg: hsl(207, 100%, 98%);
+  --container-width: 80%;
+}
+
+@media (width < 850px) {
+  :root {
+    --container-width: 90%;
+  }
+}
+
+/* General */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+p,
+li,
+button {
+  line-height: 1.6;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+img.mobile {
+  display: none;
+}
+
+@media (width < 375px) {
+  img.mobile {
+    display: block;
+  }
+
+  img.desktop {
+    display: none;
+  }
+}
+
+.container {
+  width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+button.filled {
+  border: none;
+  outline: none;
+  background-color: var(--primary-clr);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 2rem;
+  display: block;
+  margin: 15px auto;
+  font-weight: 600;
+  width: 200px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button.filled:hover {
+  background-color: var(--hover-primary-clr);
+}
+
+/* ========================= Header ========================= */
+header nav {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav button {
+  border: 1px solid var(--primary-clr);
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: var(--primary-clr);
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+header nav button:hover {
+  box-shadow: 0 0 5px 0 var(--hover-primary-clr);
+}
+
+@media (width < 600px) {
+  header nav {
+    padding: 1rem 0;
+  }
+  header nav img {
+    max-width: 100px;
+  }
+}
+
+header .hero {
+  text-align: center;
+  margin: 5rem 0;
+}
+
+header .hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+header .hero p {
+  min-width: 200px;
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
+
+header .hero img {
+  max-width: 90%;
+  margin: 20px auto;
+}
+
+header .hero .stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 60px 0;
+}
+
+header .hero .stats .stat h2 {
+  font-size: 4rem;
+  text-align: left;
+}
+
+header .hero .stats .stat img {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+header .hero .stats .stat p {
+  color: rgb(0 0 0 / 0.5);
+}
+
+@media (width < 600px) {
+  header .hero .stats {
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  header .hero .stats .stat h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (width < 550px) {
+  header .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  header .hero p {
+    width: 100%;
+  }
+}
+
+/* ========================= Main ========================= */
+
+main .grow :not(.grow > img),
+main .users :not(.users > img) {
+  background-color: var(--wave-bg);
+}
+
+main .grow .grow-main,
+.convo-main,
+.users-main {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+main section .text-side {
+  flex-basis: 30%;
+}
+
+main section .img-side {
+  flex-basis: 40%;
+}
+
+main section h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+main .community {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+main .community h4 {
+  font-size: 1.75rem;
+}
+@media (width < 650px) {
+  main .grow-main,
+  main .users-main {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .convo-main {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  main section > div img {
+    margin: 16px 0;
+  }
+
+  main .grow-main h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+  }
+}
+
+/* ========================= Main ========================= */
+
+footer {
+  background-color: var(--footer-bg);
+  padding: 30px 0;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+footer .container section {
+  flex-basis: 40%;
+}
+
+footer .container .infos p {
+  margin: 16px 0;
+}
+
+footer .container .infos ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+footer .container .infos ul li img {
+  margin-right: 10px;
+}
+
+footer .container .infos i {
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+footer .container .infos i:first-child:hover {
+  color: #1877f2;
+}
+
+footer .container .infos i:nth-child(2):hover {
+  color: #d62976;
+}
+
+footer .container .infos i:last-child:hover {
+  color: #1da1f2;
+}
+footer .container .newsletter h5 {
+  font-size: 1.25rem;
+}
+
+footer .container .newsletter p {
+  margin: 15px 0;
+}
+
+footer .container .newsletter form {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+footer .container .newsletter form input {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  display: block;
+  flex-basis: 60%;
+}
+
+footer .container .newsletter form .invalid-input {
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+footer .container .newsletter form .invalid-input h6 {
+  color: red;
+  font-weight: 600;
+}
+
+footer .container .newsletter form input:user-invalid {
+  border: 2px solid red;
+}
+
+footer .container .newsletter form input:user-invalid ~ .invalid-input {
+  opacity: 1;
+}
+
+footer button.filled {
+  width: fit-content;
+  border-radius: 3px;
+  padding: 10px 20px;
+}
+
+@media (width < 670px) {
+  footer .container {
+    flex-direction: column-reverse;
+  }
+
+  footer .container .newsletter form {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+  }
+
+  footer .container .newsletter form input {
+    display: block;
+    width: 100%;
+  }
+
+  footer .container .newsletter form button {
+    width: 150px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
